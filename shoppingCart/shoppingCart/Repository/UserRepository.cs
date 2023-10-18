@@ -26,7 +26,7 @@ namespace shoppingCart.Repository
                         command.Parameters.AddWithValue("@FirstName", user.FirstName);
                         command.Parameters.AddWithValue("@LastName", user.LastName);
                         command.Parameters.AddWithValue("@Email", user.Email);
-                        command.Parameters.AddWithValue("@PasswordHash", user.PasswordHash);
+                        command.Parameters.AddWithValue("@PasswordHash", user.PasswordHash.HashPassword());
                         var userIdParameter = new SqlParameter("@UserId", SqlDbType.Int);
                         userIdParameter.Direction = ParameterDirection.Output;
                         command.Parameters.Add(userIdParameter);

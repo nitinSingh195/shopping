@@ -56,3 +56,4 @@ D:\Demo\shoppingCart\shoppingCart\obj\Debug\net7.0\refint\shoppingCart.dll
 D:\Demo\shoppingCart\shoppingCart\obj\Debug\net7.0\shoppingCart.pdb
 D:\Demo\shoppingCart\shoppingCart\obj\Debug\net7.0\shoppingCart.genruntimeconfig.cache
 D:\Demo\shoppingCart\shoppingCart\obj\Debug\net7.0\ref\shoppingCart.dll
+D:\Demo\shoppingCart\shoppingCart\bin\Debug\net7.0\BCrypt.Net-Core.dll

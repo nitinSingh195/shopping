@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7f04Y4LpxZBrgBZyiZs5fFcgRumQSbWvF+nRElU9HIB0GYp0uxDhBS5713RtqAinKpAn5clVWL2DbbVkdQbuXg==",
+  "dgSpecHash": "V8qfm8gxj4Y4K1Axdc9uKe1R0sYZpo/2vutIXDNDQhSoD1Css+Ydr8ePzjcx6tF0wMwYs48Nd5vO+W0G2uMF3Q==",
   "success": true,
   "projectFilePath": "D:\\Demo\\shoppingCart\\shoppingCart\\shoppingCart.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\prem.tiwari\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
     "C:\\Users\\prem.tiwari\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\prem.tiwari\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\prem.tiwari\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",

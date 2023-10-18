@@ -22,8 +22,6 @@ namespace shoppingCart.Controllers
             {
                 try
                 {
-                    // Perform any necessary validation, e.g., check if the username or email is unique.
-
                     // Set additional fields before creating the user
                     newUser.RegistrationDate = DateTime.Now;
                     newUser.IsActive = true;
@@ -40,8 +38,6 @@ namespace shoppingCart.Controllers
                     return BadRequest(new { Message = "User creation failed", Error = ex.Message });
                 }
             }
-
-
 
         }
     }
