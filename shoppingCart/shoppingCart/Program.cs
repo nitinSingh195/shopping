@@ -1,8 +1,12 @@
+using shoppingCart.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddSingleton<IUserRepository, UserRepository>();
 builder.Services.AddControllers();
+
+
 
 var app = builder.Build();
 
