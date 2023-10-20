@@ -3,11 +3,11 @@ import axios from 'axios';
 
 function Signup() {
     const [formData, setFormData] = useState({
-        username: '',
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
+        Username: '',
+        FirstName: '',
+        LastName: '',
+        Email: '',
+        PasswordHash: '',
     });
 
     const handleChange = (event) => {
@@ -16,7 +16,7 @@ function Signup() {
     };
 
     const signupUser = () => {
-        axios.post('https://api.example.com/signup', formData)
+        axios.post('https://localhost:44384/api/users/signup', formData)
             .then(response => {
                 console.log('Signup successful:', response.data);
             })
