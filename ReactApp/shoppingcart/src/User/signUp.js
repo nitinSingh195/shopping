@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function Signup() {
-    const [formData, setFormData] = useState({
+    const initialFormData = {
         Username: '',
         FirstName: '',
         LastName: '',
         Email: '',
         PasswordHash: '',
-        Role:'IT',
-    });
+        Role: '',
+    };
+
+    const [formData, setFormData] = useState(initialFormData);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -20,7 +22,8 @@ function Signup() {
         console.log(formData);
         axios.post('https://localhost:44384/api/users/signup', formData)
             .then(response => {
-                console.log('Signup successful:', response.data);
+                alert("signup successful");
+                setFormData(initialFormData);
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -93,6 +96,20 @@ function Signup() {
                                 onChange={handleChange}
                             />
                         </div>
+
+                        <div className="mb-3">
+                            <label htmlFor="role" className="form-label">Role</label>
+                            <input
+                                type="role"
+                                className="form-control"
+                                id="role"
+                                name="Role"
+                                placeholder="Role"
+                                value={formData.Role}
+                                onChange={handleChange}
+                            />
+                        </div>
+
                         <div className="mb-3">
                             <button type="button" className="btn btn-primary" onClick={signupUser}>
                                 Sign Up
