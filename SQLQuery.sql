@@ -10,3 +10,105 @@ CREATE TABLE Users (
     IsActive BIT NOT NULL default 1 
 );
 go
+USE [ShoppingCart]
+GO
+
+/****** Object:  Table [dbo].[Products]    Script Date: 20-10-2023 11.26.21 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Products](
+	[ProductId] [int] IDENTITY(1,1) NOT NULL,
+	[ProductName] [nvarchar](255) NULL,
+	[ProductImage] [nvarchar](255) NULL,
+	[ProductDescription] [nvarchar](max) NULL,
+	[ProductPrice] [decimal](18, 2) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ProductId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+
+
+go
+create PROCEDURE [dbo].[CreateUser]
+    @UserId INT OUTPUT,
+    @Username NVARCHAR(50),
+    @FirstName NVARCHAR(50) = NULL,
+    @LastName NVARCHAR(50) = NULL,
+    @Email NVARCHAR(100),
+    @PasswordHash NVARCHAR(100),
+	@Role NVARCHAR(100)
+AS
+BEGIN
+    
+    IF EXISTS (SELECT 1 FROM Users WHERE Email = @Email)
+    BEGIN
+       
+        SET @UserId = -1; 
+    END
+    ELSE
+    BEGIN
+        INSERT INTO Users (Username, FirstName, LastName, Email, PasswordHash, RegistrationDate,Role)
+        VALUES (@Username, @FirstName, @LastName, @Email, @PasswordHash, GETDATE(), @Role);
+        SET @UserId = SCOPE_IDENTITY();
+    END
+END
+go
+create PROCEDURE [dbo].[GetProducts]
+AS
+BEGIN
+    SELECT
+        ProductId,
+        ProductName,
+        ProductImage,
+        ProductDescription,
+        ProductPrice,
+        (ProductPrice * 0.8) AS DiscountedPrice
+    FROM
+        Products; 
+END
+go
+
+create  PROCEDURE [dbo].[loginsp]
+    @Username NVARCHAR(255),
+    
+    @PasswordHash NVARCHAR(255)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (
+        SELECT 1
+        FROM Users
+
+        WHERE Username = @Username  AND PasswordHash = @PasswordHash
+    )
+    BEGIN
+       
+       SELECT 1;
+    END
+    ELSE
+    BEGIN
+        SELECT 0;
+    END
+END;
+go
+ create PROCEDURE [dbo].[usersrole]
+    @Username VARCHAR(20),
+    @Role VARCHAR(20) OUTPUT
+AS
+BEGIN
+    SELECT @Role = Role
+    FROM Users
+    WHERE Username = @Username;
+END
+
+
+
