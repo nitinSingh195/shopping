@@ -57,3 +57,11 @@ D:\Demo\shoppingCart\shoppingCart\obj\Debug\net7.0\shoppingCart.pdb
 D:\Demo\shoppingCart\shoppingCart\obj\Debug\net7.0\shoppingCart.genruntimeconfig.cache
 D:\Demo\shoppingCart\shoppingCart\obj\Debug\net7.0\ref\shoppingCart.dll
 D:\Demo\shoppingCart\shoppingCart\bin\Debug\net7.0\BCrypt.Net-Core.dll
+D:\Demo\shoppingCart\shoppingCart\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Demo\shoppingCart\shoppingCart\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Demo\shoppingCart\shoppingCart\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\Demo\shoppingCart\shoppingCart\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\Demo\shoppingCart\shoppingCart\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Demo\shoppingCart\shoppingCart\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Demo\shoppingCart\shoppingCart\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\Demo\shoppingCart\shoppingCart\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace shoppingCart.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -17,7 +19,7 @@ namespace shoppingCart.Controllers
         {
             _logger = logger;
         }
-
+        
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
