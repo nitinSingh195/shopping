@@ -8,6 +8,7 @@ function Signup() {
         LastName: '',
         Email: '',
         PasswordHash: '',
+        Role:'IT',
     });
 
     const handleChange = (event) => {
@@ -16,6 +17,7 @@ function Signup() {
     };
 
     const signupUser = () => {
+        console.log(formData);
         axios.post('https://localhost:44384/api/users/signup', formData)
             .then(response => {
                 console.log('Signup successful:', response.data);
@@ -37,9 +39,9 @@ function Signup() {
                                 type="text"
                                 className="form-control"
                                 id="username"
-                                name="username"
+                                name="Username"
                                 placeholder="Username"
-                                value={formData.username}
+                                value={formData.Username}
                                 onChange={handleChange}
                             />
                         </div>
@@ -49,9 +51,9 @@ function Signup() {
                                 type="text"
                                 className="form-control"
                                 id="firstName"
-                                name="firstName"
+                                name="FirstName"
                                 placeholder="First Name"
-                                value={formData.firstName}
+                                value={formData.FirstName}
                                 onChange={handleChange}
                             />
                         </div>
@@ -61,9 +63,9 @@ function Signup() {
                                 type="text"
                                 className="form-control"
                                 id="lastName"
-                                name="lastName"
+                                name="LastName"
                                 placeholder="Last Name"
-                                value={formData.lastName}
+                                value={formData.LastName}
                                 onChange={handleChange}
                             />
                         </div>
@@ -73,9 +75,9 @@ function Signup() {
                                 type="email"
                                 className="form-control"
                                 id="email"
-                                name="email"
+                                name="Email"
                                 placeholder="Email"
-                                value={formData.email}
+                                value={formData.Email}
                                 onChange={handleChange}
                             />
                         </div>
@@ -85,9 +87,9 @@ function Signup() {
                                 type="password"
                                 className="form-control"
                                 id="password"
-                                name="password"
+                                name="PasswordHash"
                                 placeholder="Password"
-                                value={formData.password}
+                                value={formData.PasswordHash}
                                 onChange={handleChange}
                             />
                         </div>
