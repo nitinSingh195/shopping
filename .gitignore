@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/shoppingCart/.vs/shoppingCart/FileContentIndex/30889744-c5ab-4940-8b74-3016d85e9d6e.vsidx
+/shoppingCart/.vs/shoppingCart/v17/.futdcache.v2
+/.gitignore
