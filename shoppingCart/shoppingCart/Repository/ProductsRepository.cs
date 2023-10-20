@@ -14,6 +14,7 @@ namespace shoppingCart.Repository
             iconfiguration = configuration;
         }
         public List<Product> GetProducts()
+        
         {
             List<Product> products = new List<Product>();
 
