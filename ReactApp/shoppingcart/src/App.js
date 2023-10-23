@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './Navbar';
 import Signup from './User/signUp';
 import Login from './User/Login';
-import { BrowserRouter as Router, Route, Switch, Routes,Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route,  Routes,Navigate } from 'react-router-dom';
 import ProductList from './User/ProductList';
 import ShoppingCart from './User/ShoppingCart';
 function App() {

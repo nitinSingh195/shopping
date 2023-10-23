@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-
 function Login() {
  const [formData, setFormData] = useState({
         Username: '',
@@ -28,9 +27,8 @@ function Login() {
             if (response.data && response.data.accessToken) {
                 localStorage.setItem('accessToken', response.data.accessToken);
                 console.log(response.data);
-                debugger;
                 const userId = response.data.userId;
-                navigate('/ProductList', { userId });
+                navigate('/ProductList', { state: { userId } });
             } else {
                 console.error('Authentication failed');
             }
@@ -80,5 +78,4 @@ function Login() {
         </div>
     );
 }
-
 export default Login;
