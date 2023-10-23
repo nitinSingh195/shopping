@@ -5,6 +5,7 @@ import Signup from './User/signUp';
 import Login from './User/Login';
 import { BrowserRouter as Router, Route, Switch, Routes,Navigate } from 'react-router-dom';
 import ProductList from './User/ProductList';
+import ShoppingCart from './User/ShoppingCart';
 function App() {
   return (
     <Router>
@@ -15,6 +16,7 @@ function App() {
         <Route path="/productlist" element={<ProductList/>}/>
         {/* <Route path="/" element={<Navigate to="/signup"/>}/> */}
           <Route path="/signup" element={<Signup />}/>
+          <Route path='/shoppingcart' element={<ShoppingCart />}/>
           </Routes>
          </Router>
   );
