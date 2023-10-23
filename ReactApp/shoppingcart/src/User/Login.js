@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 function Login() {
  const [formData, setFormData] = useState({
         Username: '',
         PasswordHash: '',
+        UserId:'',
+        FirstName:'',
+        LastName:'',
+        Role:'',
+        Email:'',
+        RegistrationDate:'',
+        LastLoginDate:'',
+        IsActive:'',
     });
-
+    const navigate = useNavigate(); 
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
@@ -18,8 +28,9 @@ function Login() {
             if (response.data && response.data.accessToken) {
                 localStorage.setItem('accessToken', response.data.accessToken);
                 console.log(response.data);
-                // Redirect to the authorized page, e.g., the dashboard
-                // You can use a router for navigation
+                debugger;
+                const userId = response.data.userId;
+                navigate('/ProductList', { userId });
             } else {
                 console.error('Authentication failed');
             }

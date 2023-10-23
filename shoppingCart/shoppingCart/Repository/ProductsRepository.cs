@@ -1,6 +1,7 @@
 ﻿using shoppingCart.Model;
 using System.Data.SqlClient;
 using System.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace shoppingCart.Repository
 {
@@ -46,6 +47,11 @@ namespace shoppingCart.Repository
             }
 
             return products;
+        }
+
+        public void AddToCart(Product product)
+        {
+            throw new NotImplementedException();
         }
 
     }

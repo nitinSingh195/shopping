@@ -1,13 +1,6 @@
 USE [ShoppingCart]
 GO
 
-/****** Object:  Table [dbo].[Users]    Script Date: 20-10-2023 11.29.17 AM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 CREATE TABLE [dbo].[Users](
 	[UserID] [int] IDENTITY(1,1) NOT NULL,
 	[Username] [nvarchar](50) NOT NULL,
@@ -54,6 +47,13 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
+CREATE TABLE Cart(
+	cartId INT IDENTITY(1,1) NOT NULL,
+	ProductId INT NOT NULL,
+	UserId INT NOT NULL
+) 
+GO
+
 
 
 
@@ -97,7 +97,7 @@ BEGIN
 END
 go
 
-create  PROCEDURE [dbo].[loginsp]
+alter  PROCEDURE [dbo].[loginsp]
     @Username NVARCHAR(255),
     
     @PasswordHash NVARCHAR(255)
@@ -113,7 +113,8 @@ BEGIN
     )
     BEGIN
        
-       SELECT 1;
+       SELECT UserID
+        FROM Users
     END
     ELSE
     BEGIN

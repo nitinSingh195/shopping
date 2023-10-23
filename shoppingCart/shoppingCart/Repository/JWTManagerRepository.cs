@@ -23,6 +23,7 @@ namespace shoppingCart.Repository
 
         public Tokens Authenticate(User12 users12)
         {
+            int _userId;
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -31,8 +32,8 @@ namespace shoppingCart.Repository
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@Username", users12.Username);
                     command.Parameters.AddWithValue("@PasswordHash", users12.PasswordHash);
-                    var result = Convert.ToInt32(command.ExecuteScalar());
-                    if (result == 0) 
+                    _userId = Convert.ToInt32(command.ExecuteScalar());
+                    if (_userId == 0) 
                     {
                         return null;
                     }
@@ -56,7 +57,7 @@ namespace shoppingCart.Repository
                 {
                     Subject = new ClaimsIdentity(new Claim[]
                     {
-                        new Claim(ClaimTypes.Surname, users12.Username),
+                        new Claim(ClaimTypes.Name, users12.Username),
                         new Claim(ClaimTypes.Role, role)
 
                     }),
@@ -71,6 +72,7 @@ namespace shoppingCart.Repository
                     Role = role,
                     AccessTokenExpiresIn = accessTokenDescriptor.Expires.Value,
                     RefreshTokenExpiresIn = refreshTokenDescriptor.Expires.Value,
+                    UserId = _userId,
                 };
                 return tokens;
             }

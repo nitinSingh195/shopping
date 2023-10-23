@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import MessagePopup from '../MessagePopup';
 function Signup() {
-    const initialFormData = {
+    const [formData, setFormData] = useState({
         Username: '',
         FirstName: '',
         LastName: '',
@@ -158,20 +158,6 @@ function Signup() {
                                 <div className="invalid-feedback">{validationErrors.PasswordHash}</div>
                             )}
                         </div>
-
-                        <div className="mb-3">
-                            <label htmlFor="role" className="form-label">Role</label>
-                            <input
-                                type="role"
-                                className="form-control"
-                                id="role"
-                                name="Role"
-                                placeholder="Role"
-                                value={formData.Role}
-                                onChange={handleChange}
-                            />
-                        </div>
-
                         <div className="mb-3">
                             <button type="button" className="btn btn-primary" onClick={signupUser}>
                                 Sign Up

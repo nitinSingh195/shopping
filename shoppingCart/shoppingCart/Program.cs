@@ -1,11 +1,17 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using shoppingCart.Repository;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Text;
+using shoppingCart.Repository;
+using Microsoft.Extensions.Caching.Memory;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var Configuration = builder.Configuration;
+builder.Services.AddDistributedMemoryCache();
+
 builder.Services.AddAuthentication(x =>
 {
     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -24,7 +30,8 @@ builder.Services.AddAuthentication(x =>
         ValidAudience = Configuration["JWT:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(Key)
     };
-});
+}).AddCookie();
+
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
@@ -38,6 +45,13 @@ builder.Services.AddCors(options =>
 builder.Services.AddSingleton<IUserRepository, UserRepository>();
 builder.Services.AddSingleton<IProductRepository, JWTManagerRepository>();
 builder.Services.AddSingleton<IProductsRepository, ProductsRepository>();
+
+// Add session services
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Adjust the timeout as needed
+});
+
 builder.Services.AddControllers();
 
 var app = builder.Build();
@@ -46,8 +60,10 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 app.UseAuthentication();
+app.UseSession(); // Add session middleware
 app.UseCors();
 app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+

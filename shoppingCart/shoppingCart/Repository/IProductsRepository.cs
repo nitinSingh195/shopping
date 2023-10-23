@@ -6,6 +6,6 @@ namespace shoppingCart.Repository
     {
 
         public List<Product> GetProducts();
-
+        public void AddToCart(Product product);
     }
 }

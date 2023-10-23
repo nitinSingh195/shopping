@@ -6,7 +6,7 @@ namespace shoppingCart.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController : ControllerBase
+    public class AuthController : BaseController
     {
         private readonly IProductRepository _jwtManagerRepository;
 
@@ -25,6 +25,8 @@ namespace shoppingCart.Controllers
             {
                 return Unauthorized("Invalid credentials");
             }
+            //SetUserData(tokens.UserId);
+            HttpContext.Session.SetInt32("UserId", tokens.UserId);
             return Ok(tokens);
         }
     }

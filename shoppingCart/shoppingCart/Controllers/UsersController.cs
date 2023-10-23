@@ -31,7 +31,6 @@ namespace shoppingCart.Controllers
                     return Ok(new { UserId = userId, Message = "User already exist" });
 
                 }
-
                 return Ok(new { UserId = userId, Message = "User created successfully" });
             }
             catch (Exception ex)

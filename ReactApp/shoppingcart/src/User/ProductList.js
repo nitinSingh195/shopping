@@ -5,18 +5,18 @@ import axios from 'axios';
 import './ProductList.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 
-function ProductList() {
+function ProductList(props) {
 const [products, setProducts] = useState([]);
-
+const  userId  = props.userId;
     useEffect(() => {
-        axios.get('https://localhost:44384/api/Products')
+        axios.get(`https://localhost:44384/api/Products?userId=${userId}`)
             .then(response => {
                 setProducts(response.data);
             })
             .catch(error => {
                 console.error('Error:', error);
             });
-    }, []);
+    }, [userId]);
 
     return (
         <div className="container mt-5">
