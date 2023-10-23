@@ -1,13 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import './ProductList.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css'; 
+import { useLocation } from 'react-router-dom';
 
 function ProductList(props) {
 const [products, setProducts] = useState([]);
-const  userId  = props.userId;
+// const  userId  = props.userId;
+ const location = useLocation();
+  const { userId } = location.state || {};
     useEffect(() => {
         axios.get(`https://localhost:44384/api/Products?userId=${userId}`)
             .then(response => {
