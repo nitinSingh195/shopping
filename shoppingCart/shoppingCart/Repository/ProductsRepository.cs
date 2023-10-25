@@ -49,10 +49,19 @@ namespace shoppingCart.Repository
             return products;
         }
 
-        public void AddToCart(Product product)
+        public void AddToCart(int userId, int productId)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (var command = new SqlCommand("AddToCart", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    command.Parameters.AddWithValue("@ProductId", productId);
+                    command.ExecuteNonQuery();  
+                }
+            }
         }
-
     }
 }

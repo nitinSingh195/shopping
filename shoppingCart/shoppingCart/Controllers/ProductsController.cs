@@ -11,7 +11,7 @@ namespace shoppingCart.Controllers
         private readonly IProductsRepository productsRepository;
         public ProductsController(IProductsRepository repository)
         {
-            productsRepository = repository;
+           productsRepository = repository;
         }
 
         [HttpGet]
@@ -20,18 +20,37 @@ namespace shoppingCart.Controllers
             var products = productsRepository.GetProducts();
             return Ok(products);
         }
+
+        [HttpPost]
+        //public IActionResult AddToCart(int userId, int productId)
+        //{
+
+        //    productsRepository.AddToCart(userId, productId);
+
+        //    return Ok();
+
+        //}
+
+
         [HttpPost]
         public IActionResult AddToCart([FromBody] Product product)
         {
-            try
+            if (product == null)
             {
-                productsRepository.AddToCart(product);
-                return Ok(new { Message = "Product added successfully" });
+                return BadRequest("Invalid request data");
             }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = "Product add failed", Error = ex.Message });
+            int userId = product.ProductId;
+            int productId = product.ProductId;
+            productsRepository.AddToCart(userId, productId);
+            return Ok();
             }
-        }
+
+
+
+
+
+
+
+
     }
 }
