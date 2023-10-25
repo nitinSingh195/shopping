@@ -1,9 +1,9 @@
 import React from 'react';
-
+import { useSelector } from 'react-redux';
 const Navbar = () => {
-    const userName = 'John Doe'; // Replace with the actual user name
+    const userName = useSelector((state) => state.user.userName);
     const cartItemCount = 5; // Replace with the actual cart item count
-
+    //const userId = useSelector((state) => state.user.userId);
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="/">Shopping Cart</a>
@@ -31,11 +31,10 @@ const Navbar = () => {
                     </li>
                 </ul>
             </div>
-            <div className="ml-auto">
-                {/* <span className="navbar-text">
-                    <span className="badge bg-primary mr-2">{cartItemCount}</span>
+            <div className="ml-auto mr-3">
+                <span className="navbar-text mr-3">
                     Welcome, {userName}
-                </span> */}
+                </span>
                 <button type="button" class="btn btn-primary position-relative">
                     My Cart
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">

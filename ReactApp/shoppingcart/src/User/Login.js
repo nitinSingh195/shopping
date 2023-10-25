@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setUserName } from './userActions'; 
 
 function Login() {
  const [formData, setFormData] = useState({
@@ -28,6 +30,7 @@ function Login() {
                 localStorage.setItem('accessToken', response.data.accessToken);
                 console.log(response.data);
                 const userId = response.data.userId;
+                dispatch(setUserName(response.data.userName)); 
                 navigate('/ProductList', { state: { userId } });
             } else {
                 console.error('Authentication failed');
