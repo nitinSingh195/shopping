@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './Navbar';
-import Signup from './User/signUp';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes,Navigate } from 'react-router-dom';
 import Login from './User/Login';
-import { BrowserRouter as Router, Route,  Routes,Navigate } from 'react-router-dom';
 import ProductList from './User/ProductList';
+import Signup from './User/signUp';
 import ShoppingCart from './User/ShoppingCart';
+import Layout from './Layout';
+
 function App() {
   return (
     <Router>
-        <Navbar/>
-        <Routes>
-        <Route path="/" element={<Navigate to="/Login"/>}/>
-        <Route path="/login" element={<Login />}/>
-        <Route path="/productlist" element={<ProductList/>}/>
-        {/* <Route path="/" element={<Navigate to="/signup"/>}/> */}
-          <Route path="/signup" element={<Signup />}/>
-          <Route path='/shoppingcart' element={<ShoppingCart />}/>
-          </Routes>
-         </Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/shoppingcart" element={<ShoppingCart />} />
+
+        {/* Use Layout to wrap the following routes */}
+        <Route
+          path="/productlist"
+          element={
+            <Layout>
+              <ProductList />
+            </Layout>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 
