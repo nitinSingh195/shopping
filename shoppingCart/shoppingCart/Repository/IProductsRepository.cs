@@ -1,4 +1,5 @@
-﻿using shoppingCart.Model;
+﻿using Microsoft.AspNetCore.Mvc;
+using shoppingCart.Model;
 
 namespace shoppingCart.Repository
 {
@@ -6,6 +7,6 @@ namespace shoppingCart.Repository
     {
 
         public List<Product> GetProducts();
-        public void AddToCart(Product product);
+        public void AddToCart(int userId, int productId);
     }
 }
