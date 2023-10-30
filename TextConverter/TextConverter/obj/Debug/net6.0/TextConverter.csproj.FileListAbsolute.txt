@@ -1,0 +1,8 @@
+D:\TextConverter\TextConverter\TextConverter\obj\Debug\net6.0\TextConverter.csproj.AssemblyReference.cache
+D:\TextConverter\TextConverter\TextConverter\obj\Debug\net6.0\TextConverter.GeneratedMSBuildEditorConfig.editorconfig
+D:\TextConverter\TextConverter\TextConverter\obj\Debug\net6.0\TextConverter.AssemblyInfoInputs.cache
+D:\TextConverter\TextConverter\TextConverter\obj\Debug\net6.0\TextConverter.AssemblyInfo.cs
+D:\TextConverter\TextConverter\TextConverter\obj\Debug\net6.0\TextConverter.csproj.CoreCompileInputs.cache
+D:\TextConverter\TextConverter\TextConverter\obj\Debug\net6.0\TextConverter.MvcApplicationPartsAssemblyInfo.cache
+D:\TextConverter\TextConverter\TextConverter\obj\Debug\net6.0\TextConverter.RazorAssemblyInfo.cache
+D:\TextConverter\TextConverter\TextConverter\obj\Debug\net6.0\TextConverter.RazorAssemblyInfo.cs

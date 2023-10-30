@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "NW44etLiNLMbUPc7E5xzACJPr8Z6q9tfCzNXAyig4ND94a0Gu3Ursj7FGKSQV80w+tWc5Z+yZlzoUD0aNoECoQ==",
+  "success": true,
+  "projectFilePath": "D:\\DemoProject\\TextConverter\\TextConverter\\TextConverter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\azure.ai.translation.document\\1.0.0\\azure.ai.translation.document.1.0.0.nupkg.sha512",
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\bootstrap\\3.0.1\\bootstrap.3.0.1.nupkg.sha512",
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\jquery\\3.7.1\\jquery.3.7.1.nupkg.sha512",
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\pdfsharpcore\\1.3.62\\pdfsharpcore.1.3.62.nupkg.sha512",
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\sharpziplib\\1.3.3\\sharpziplib.1.3.3.nupkg.sha512",
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\sixlabors.fonts\\1.0.0-beta17\\sixlabors.fonts.1.0.0-beta17.nupkg.sha512",
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\sixlabors.imagesharp\\1.0.4\\sixlabors.imagesharp.1.0.4.nupkg.sha512",
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.6.0\\system.diagnostics.diagnosticsource.4.6.0.nupkg.sha512",
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\nitin.singh\\.nuget\\packages\\twitter.bootstrap\\3.0.1.1\\twitter.bootstrap.3.0.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}

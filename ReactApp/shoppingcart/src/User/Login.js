@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { setUserName } from './userActions'; 
 
 function Login() {
+    const dispatch = useDispatch();
  const [formData, setFormData] = useState({
         Username: '',
         PasswordHash: '',

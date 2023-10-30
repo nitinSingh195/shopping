@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">File Upload</h2>
+                        <!-- Add your file upload control here -->
+                        <form enctype="multipart/form-data" method="post" asp-action="TranslatePdf" asp-controller="Home">
+                            <div class="form-group">
+                                <label for="fileInput">Choose a File:</label>
+                                <input type="file" class="form-control-file" name="fileInput" id="fileInput" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

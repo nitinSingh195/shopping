@@ -22,28 +22,16 @@ namespace shoppingCart.Controllers
         }
 
         [HttpPost]
-        //public IActionResult AddToCart(int userId, int productId)
-        //{
-
-        //    productsRepository.AddToCart(userId, productId);
-
-        //    return Ok();
-
-        //}
-
-
-        [HttpPost]
-        public IActionResult AddToCart([FromBody] Product product)
+        [Route("addToCart/{userId}/{productId}")]
+        public IActionResult AddToCart(int userId,int productId)
         {
-            if (product == null)
+            if (userId == 0 || productId == 0)
             {
                 return BadRequest("Invalid request data");
             }
-            int userId = product.ProductId;
-            int productId = product.ProductId;
             productsRepository.AddToCart(userId, productId);
             return Ok();
-            }
+        }
 
 
 
